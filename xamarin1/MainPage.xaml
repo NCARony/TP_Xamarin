@@ -6,6 +6,7 @@
              xmlns:utils="clr-namespace:xamarin1.Utils"
              mc:Ignorable="d"
              x:Class="xamarin1.MainPage">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -14,7 +15,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
-            <RowDefinition Height="auto*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
@@ -29,13 +30,13 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <ImageButton Grid.Row="0" Grid.Column="0" Source='{utils:ImageFromResources xamarin1.images.pencil.png}' VerticalOptions="Fill" HorizontalOptions="Fill"/>
-                <Label Grid.Row="0" Grid.Column="1" FontSize="20" TextColor="White" Text="Accueil" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                <Label Grid.Row="0" Grid.Column="1" FontSize="20" TextColor="White" Text="Accueil" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                 <ImageButton Grid.Row="0" Grid.Column="2" Source='{utils:ImageFromResources xamarin1.images.search.png}'/>
             </Grid>
         </ContentView>
         <ContentView x:Name="connexionForm" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" IsVisible="True">
             <StackLayout>
-                <Label Text="Connexion à twitter" TextColor="Gray" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="Connexion à twitter" TextColor="Gray" HorizontalOptions="CenterAndExpand"/>
                 <Entry x:Name="idEntry" Placeholder="Identifiant twitter" HorizontalOptions="FillAndExpand"/>
                 <Entry x:Name="pwdEntry"  Placeholder="Mot de passe" IsPassword="True" HorizontalOptions="FillAndExpand"/>
                 <StackLayout Orientation="Horizontal">
@@ -43,10 +44,10 @@
                     <Label Text="Mémoriser mes informations" TextColor="Gray" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <Label x:Name="error" TextColor="Red" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" IsVisible="False"/>
-                <Button Text="Connexion" HorizontalOptions="FillAndExpand" Clicked="Connection_Clicked"/>
+                <Button x:Name="btnConnexion" Text="Connexion" HorizontalOptions="FillAndExpand" Clicked="Connection_Clicked"/>
             </StackLayout>
         </ContentView>
-        <ContentView x:Name="listTweet" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" IsVisible="False">        
+        <ContentView x:Name="tweetList" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">        
             <ScrollView HorizontalOptions="FillAndExpand">
                 <ContentView HorizontalOptions="FillAndExpand">
                     <Grid HorizontalOptions="FillAndExpand">
@@ -72,11 +73,11 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <ContentView BackgroundColor="Black" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"/>
-                                <Label Text="Antoine" Grid.Row="0" Grid.Column="1"></Label>
-                                <Label Text="@AntoineTweet" Grid.Row="0" Grid.Column="2"></Label>
-                                <Label Text="50s" TextColor="Gray" Grid.Row="0" Grid.Column="3"></Label>
-                                <Label Text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression." Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></Label>
+                                <Image Source="https://picsum.photos/50/50/?random.jpg" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"/>
+                                <Label Text="Antoine" Grid.Row="0" Grid.Column="1"/>
+                                <Label Text="@AntoineTweet" Grid.Row="0" Grid.Column="2"/>
+                                <Label Text="50s" TextColor="Gray" Grid.Row="0" Grid.Column="3"/>
+                                <Label Text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression." Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
                             </Grid>
                         </ContentView>
                         <ImageButton Grid.Row="1" Grid.Column="0" Source='{utils:ImageFromResources xamarin1.images.reply.png}'/>
